@@ -8,7 +8,7 @@ using Vic.SportsStore.Domain.Entities;
 
 namespace Vic.SportsStore.Domain.Mock
 {
-    public class MockProductsRepository : IProductsRepository
+    public class MockProductsRepository : IProductRepository
 
     {
         public IEnumerable<Product> Products

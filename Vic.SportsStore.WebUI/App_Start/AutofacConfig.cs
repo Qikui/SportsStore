@@ -6,6 +6,7 @@
     using System;
     using global::Vic.SportsStore.Domain.Abstract;
     using global::Vic.SportsStore.Domain.Mock;
+    using global::Vic.SportsStore.Domain.Concrete;
 
     namespace Vic.SportsStore.WebApp
     {
@@ -27,7 +28,7 @@
                 //#endregion
 
                 #region mock class
-                builder.RegisterInstance<IProductsRepository>(new MockProductsRepository());
+                builder.RegisterInstance<IProductRepository>(new EFProductRepository());
                 #endregion
 
                 builder.RegisterControllers(AppDomain.CurrentDomain.GetAssemblies());
