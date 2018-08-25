@@ -1,0 +1,13 @@
+﻿@using Vic.SportsStore.Domain.Entities
+@model IEnumerable<Product>
+@{
+    ViewBag.Title = "Products";
+}
+@foreach (var p in Model)
+{
+    <div>
+        <h3>@p.Name</h3>
+        @p.Description
+        
+    </div>
+}
