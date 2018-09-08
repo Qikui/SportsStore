@@ -30,7 +30,7 @@
                 #region mock class
                 builder.RegisterInstance<IProductRepository>(new EFProductRepository());
                 #endregion
-
+                builder.RegisterInstance<IOrderProcessor>(new EmailOrderProcessor(new EmailSettings()));
                 builder.RegisterControllers(AppDomain.CurrentDomain.GetAssemblies());
 
                 var container = builder.Build();

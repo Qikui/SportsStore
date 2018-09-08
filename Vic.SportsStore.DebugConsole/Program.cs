@@ -18,7 +18,7 @@ namespace Vic.SportsStore.DebugConsole
                 {
                     Name = "Coffee",
                     Description = "Made in Comlunbia",
-                    Price = 24.5m,
+                    Price = 124.5m,
                     Category = "Drinks", 
                 };
                 var products = ctx.Products;
