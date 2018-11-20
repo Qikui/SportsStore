@@ -23,5 +23,15 @@ namespace Vic.SportsStore.Domain.Mock
                 };
             }
         }
+
+        public Product DeleteProduct(int productID)
+        {
+            return new Product();
+        }
+
+        public void SaveProduct(Product product)
+        {
+
+        }
     }
 }

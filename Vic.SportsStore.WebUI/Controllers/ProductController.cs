@@ -1,6 +1,7 @@
 ﻿namespace Vic.SportsStore.WebApp.Controllers
 {
     using global::Vic.SportsStore.Domain.Abstract;
+    using global::Vic.SportsStore.Domain.Entities;
     using global::Vic.SportsStore.WebApp.Models;
     using System.Linq;
     using System.Web.Mvc;
@@ -14,7 +15,20 @@
         {
             this.repository = productRepository;
         }
-
+        public FileContentResult GetImage(int productId)
+        {
+            Product prod = repository
+            .Products
+            .FirstOrDefault(p => p.ProductId == productId);
+            if (prod != null)
+            {
+                return File(prod.ImageData, prod.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
         public ViewResult List(string category, int page = 1)
         {
             ProductsListViewModel model = new ProductsListViewModel
